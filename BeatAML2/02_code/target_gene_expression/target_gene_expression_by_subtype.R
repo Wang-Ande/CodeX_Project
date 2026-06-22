@@ -282,8 +282,8 @@ for (gene in unique(expr_long$gene)) {
   for (i in seq_len(nrow(eligible_groups))) {
     group <- eligible_groups[i, , drop = FALSE]
     in_ids <- unique(all_assignments$sample_id[
-      all_assignments$subtype_type == group$subtype_type &&
-        all_assignments$subtype_variable == group$subtype_variable &&
+      all_assignments$subtype_type == group$subtype_type &
+        all_assignments$subtype_variable == group$subtype_variable &
         all_assignments$subtype_level == group$subtype_level
     ])
     in_ids <- intersect(in_ids, gene_expr$sample_id)
