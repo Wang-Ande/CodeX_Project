@@ -5,6 +5,10 @@
 
 options(stringsAsFactors = FALSE)
 
+message <- function(...) {
+  cat(paste0(..., collapse = ""), "\n", sep = "")
+}
+
 args <- commandArgs(trailingOnly = TRUE)
 target_genes <- c("CD96", "TNFRSF10A")
 if (length(args) >= 1 && nzchar(args[1])) {
